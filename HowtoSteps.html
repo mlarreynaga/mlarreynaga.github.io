@@ -45,7 +45,6 @@ display: block;
 .dis-bg{
 margin: 16px 0;
 padding: 20px;
-
 }
 .pre-steps li, .p1 {
 padding: 3px;
@@ -78,7 +77,6 @@ text-align: center;
 .col-left {
     float: left;
 }
-
 .col-right {
     float: right;
 }
@@ -92,7 +90,6 @@ margin:0;
 .col-all img {
     width: 100%;
     height: auto;
-    
 }
 #how-to-title{
     font-family: futura;
@@ -151,10 +148,19 @@ text-align: left;
   body{
   padding: 0px;
   }
+  #how-to-title::after, #how-to-title::before{
+	  width:12%;
+  }
+  }
+  @media (max-width: 860px) {
   .col-all{
 	width:100%;
 	display:block;
-	padding:0px;  
+	padding:0px;
+	min-height:656px;  
+  }
+  .col-all img{
+	width:95%;
   }
   .col-left{
   margin-bottom: 18px;
@@ -165,10 +171,21 @@ text-align: left;
   .step-title{
   padding: 20px 20px 0;
   }
-  .p1{
-      padding: 0px 20px;
+  .fit .p1{
+      padding: 20px 20px;
   }
+    #how-to-title{
+	font-size:1.75em;
+	}
   }
+    @media (max-width: 765px) {
+		  #how-to-title{
+	font-size:1.5em;
+	}
+	    #how-to-title::after, #how-to-title::before{
+	display:none;
+  }
+	}
 </style>
 </head>
 
@@ -205,8 +222,6 @@ text-align: left;
 <img class="alignleft wp-image-130052 size-full" src="http://www.tyr.com/wp-content/uploads/2016/12/Steps-1.jpg" alt="TechSuit-1" width="72" height="81" />
 &nbsp;
 <p class="p1">To begin, insert one foot at a time through the neck opening.</p>
-&nbsp;
-&nbsp;
 </div>
 
 <div class="col-right col-all">
@@ -277,7 +292,13 @@ text-align: left;
 <p id="step_11" class="step-title"><strong>STEP 11</strong></p>
 <img class="alignleft wp-image-130052 size-full" src="http://www.tyr.com/wp-content/uploads/2016/12/Steps-11.jpg" alt="TechSuit-1" width="72" height="81" />
 &nbsp;
-<p class="p1">Finally, flip each leg gripper down and move freely. Lift the legs to ensure the suit is in place.</p>
+<p class="p1">Flip each leg gripper down and move freely. Lift the legs to ensure the suit is in place.</p>
+</div>
+<div class="col-right col-all">
+<p id="step_12" class="step-title"><strong>STEP 12</strong></p>
+<img class="alignleft wp-image-130052 size-full" src="http://www.tyr.com/wp-content/uploads/2016/12/Steps-12.jpg" alt="TechSuit-1" width="72" height="81" />
+&nbsp;
+<p class="p1">Finally, enjoy your tech suit!</p>
 </div>
 </div>
 </div>
