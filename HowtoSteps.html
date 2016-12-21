@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Untitled Document</title>
 
 <style>
@@ -10,6 +11,9 @@ body{
 	max-width: 1040px;
 	padding:0 22.3%;	
 }
+ #how-to-video{
+  height:585px;
+  }
 .how-to-wrapper{
 width:100%;
 text-align: left;	
@@ -21,7 +25,7 @@ text-align: left;
 .removal{
 padding:0px;
 }
-.pre-steps h3 {
+.pre-steps h3,.pre-steps h2 {
     text-transform: uppercase;
     margin: 0;
     font-family: futura;
@@ -73,7 +77,6 @@ text-align: center;
     background: #ededed;
 	box-shadow:0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
 }
-
 .col-left {
     float: left;
 }
@@ -129,7 +132,7 @@ text-align: left;
     top: 21px;
     right: 0;
 }
-.fit h3 {
+.fit h3, .fit h2 {
     text-transform: uppercase;
     margin: 0;
     padding: 0 20px 15px 0px;
@@ -139,20 +142,20 @@ text-align: left;
     text-align: left;
 	font-size:20px;
 }
- @media (min-width: 1025px) {
+ @media only screen and (min-width: 1025px) {
  .how-to-wrapper{
  min-width:1040px;
  }
  }
-  @media (max-width: 1025px) {
-  body{
+  @media only screen and (max-width: 1024px) {
+  body {
   padding: 0px;
   }
   #how-to-title::after, #how-to-title::before{
 	  width:12%;
   }
   }
-  @media (max-width: 860px) {
+  @media only screen and (max-width: 860px) {
   .col-all{
 	width:100%;
 	display:block;
@@ -178,12 +181,18 @@ text-align: left;
 	font-size:1.75em;
 	}
   }
-    @media (max-width: 765px) {
-		  #how-to-title{
+   @media only screen and (max-width: 768px) {
+	#how-to-title{
 	font-size:1.5em;
 	}
-	    #how-to-title::after, #how-to-title::before{
+	#how-to-title::after, #how-to-title::before{
 	display:none;
+  }
+  #how-to-video{
+  height:300px;
+  }
+  .col-all{
+  min-height:0px;
   }
 	}
 </style>
@@ -192,7 +201,7 @@ text-align: left;
 <body>
 <div id="How-To" class="how-to-wrapper">
 <div id="how-to-video">
-<iframe width="100%" height="585" src="https://www.youtube.com/embed/BUELhTa-zng" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/BUELhTa-zng" frameborder="0" allowfullscreen></iframe>
 </div>
 <h1 id="how-to-title">How to put on a female tech suit</h1>
 <div class="pre-steps">
@@ -207,15 +216,15 @@ text-align: left;
 <div class="pre-steps removal">
 <h3>DISCLAIMER</h3>
 <div class="dis-bg">
-<p class="p1">The TYR Avictor is specially designed for swimmers competing at high levels of competition. The right size tech suit should have a tight fit, compressed feel and take time to put on.</p>
+<p class="p1">Technical suits are specially designed for swimmers competing at high levels of competition. The right size tech suit should have a tight fit, compressed feel and take time to put on.</p>
 <p class="p1">Failure to follow these guidelines may result in ripping or tearing of the technical suit.</p>
-<p class="p1">* Please note, the athlete is wearing a swimsuit underneath for this fit guide ONLY.</p>
+<p class="p1">*Please note, the athlete is wearing a swimsuit underneath for this fit guide ONLY and will be putting on a <a style="text-decoration:none; color:#666666" href="http://www.tyr.com/shop/collections/avictor.html?gdf_gender=684">TYR Avictor</a> tech suit.</p>
 </div>
 </div>
 <div class="steps_wrapper">
 <div class="steps">
 <div class="fit"> 
-<h3>Fitting</h3>
+<h2>Fitting</h2>
 <div class="row">
 <div class="col-left col-all">
 <p id="step_1" class="step-title"><strong>STEP 1</strong></p>
@@ -303,7 +312,7 @@ text-align: left;
 </div>
 </div>
 <div class="pre-steps removal">
-<h3>REMOVING YOUR FEMALE TECH SUIT</h3>
+<h2>REMOVING YOUR FEMALE TECH SUIT</h2>
 <ul class="list-2">
 <li>The Avictor should only be worn during elite events and taken off in between races.</li>
 <li>To begin, peel the tech suit off of your body, leaving it inside out as you go.</li>
