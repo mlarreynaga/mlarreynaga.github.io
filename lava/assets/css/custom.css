@@ -328,8 +328,6 @@ background: url('../img/AjaxLoader.gif') no-repeat center center #aebab6;
 	}
 
 }
-
-
 @media (max-width: 480px) {
 	.mix-Match .navbar-fixed-top, .navbar-fixed-bottom {
 	position: static;
@@ -380,13 +378,3 @@ NO MORE TABLES!! ;)
 	}
 	.mix-Match {padding: 0px;}
 }
-
-
-
-
-
-
-
-
-
-
