@@ -1,0 +1,66 @@
+<html ng-app>
+    <head>
+       
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
+    <script
+src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+        
+        <script>
+       function EmailController($scope) {
+    $scope.isPopupVisible = false;
+           
+    $scope.showPopup = function () {
+            $scope.isPopupVisible = true;
+};
+            $scope.closePopup = function () {
+            $scope.isPopupVisible = false;
+};
+    $scope.emails = [
+       { from: 'John', subject: 'I love angular', date: 'Jan 1' },
+       { from: 'Jack', subject: 'Angular and I are just friends', date: 'Feb 15' },
+       { from: 'Ember', subject: 'I hate you Angular!', date: 'Dec 8' }
+    ];
+}
+        </script>
+    </head>
+    <body ng-controller="EmailController">
+        <div class="container" stlye="padding:30px;">
+            <table class="table table-bordered table-condensed">
+        <tr ng-repeat="email in emails" ng-click="showPopup()">
+            <td>{{ email.from }}</td>
+            <td>{{ email.subject }}</td>
+            <td>{{ email.date }}</td>
+        </tr>
+        </table>
+            
+        <div class="modal" ng-show="isPopupVisible">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="closePopup()">&times;</button>
+            <h3>Subject</h3>
+        </div>
+        <div class="modal-body">
+            <strong>From:</strong> Steve <br />
+            <strong>Date:</strong> Jan 2 <br />
+            <br />
+            <p>
+                Hey You, <br />
+                <br />
+                How you doing?<br />
+                <br />
+                Sincerely<br />
+                Your Bro
+            </p>
+        </div>
+        <div class="modal-footer">
+              <a href="#" class="btn btn-primary" ng-click="closePopup()">Close</a>
+        </div>
+    </div>    
+</div>
+    </body>
+            
+</html>
