@@ -1,0 +1,125 @@
+<html lang="en" ng-app >
+    <head>
+    <link href="assets/css/bootstrapTheme.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+              <!-- Add Angular JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js">
+        </script>
+        <script>
+             function mainController($scope) {
+       $scope.collections = [
+           {
+           name: "Edessa",
+           styles: [
+               {
+                title: "TYR Edessa",
+                name: "Women's Shea 2 in 1 Tank", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/TED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/TED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Edessa",
+                name: "Women's Harlow Top", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/BHED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/BHED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Edessa",
+                name: "Women's Brooke Bralette", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/BWED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/BWED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Edessa",
+                name: "Women's Lula Bikini Bottom", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/BUED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/BUED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Edessa",
+                name: "Della BoyShort", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/BED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/BED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Edessa",
+                name: "Aria Long Sleeve Rashguard", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/SLED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/SLED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Edessa",
+                name: "Makai Capri", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/TMED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/TMED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               }
+           ]  
+           },
+           {
+               name: 'Verona',
+               styles: [
+               {
+                title: "TYR Verona",
+                name: "Women's Shea 2 in 1 Tank", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/TVE7-088_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/TVE7-088_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Verona",
+                name: "Women's Harlow Top", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/TTVER7-088_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/TTVER7-088_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Verona",
+                name: "Women's Brooke Bralette", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/BWED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/BWED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Verona",
+                name: "Women's Lula Bikini Bottom", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/BUED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/BUED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Verona",
+                name: "Della BoyShort", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/BED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/BED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Verona",
+                name: "Aria Long Sleeve Rashguard", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/SLED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/SLED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               },
+               {
+                title: "TYR Verona",
+                name: "Makai Capri", 
+                topimg:"http://www.tyr.com/wp-content/uploads/2017/01/TMED7-418_alt1.jpg", bottomimg:"http://www.tyr.com/wp-content/uploads/2017/01/TMED7-418_alt2.jpg",
+                color: "Navy/Multi"
+               }
+           ]
+           },
+           { name: 'Cadet', },
+           { name: 'Cyprus', },
+           { name: 'Sonoma', },
+           { name: 'Solids', }
+        ];
+             }
+      </script>
+    </head>
+    <body>
+        <div class="container" ng-controller="mainController" >
+            <h2>TEST</h2>
+        <div class="row" ng-repeat="collection in collections">    
+        <h1> {{ collection.name }} </h1>
+            <div ng-repeat="style in collection.styles">
+            <img ng-src="{{ style.topimg }}">
+                </div>
+    </div> 
+        </div>
+    </body>
+</html>
