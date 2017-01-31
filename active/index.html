@@ -58,7 +58,555 @@
 
 });
 </script>
-      <script>
+     
+            <!-----			width: "840px",
+			height: "576px",------>                 
+<style type="text/css">
+body #content[role="main"] > .main-container, body #content[role="main"] > .breadcrumbs, body #content[role="main"] > #top-desc {
+    width: 100% !important;
+    max-width: 100%;
+    margin-top: -24px;
+}
+    h2.collectionTitle{
+        padding: 0 2%;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: futura;
+        color: #999;
+    }
+    h2.collectionTitle::before {
+    border-top: 1px solid #c9c9c9;
+    width: 40%;
+    content: '';
+    display: block;
+    position: relative;
+    top: 16px;
+    left: 0;
+    z-index: 0;
+}
+
+h2.collectionTitle::after {
+    border-top: 1px solid #c9c9c9;
+    width: 41%;
+    content: '';
+    display: block;
+    position: relative;
+    bottom: 18px;
+    left: 61%;
+    z-index: 0;
+}
+    .item h3 {
+color:#666; 
+line-height: 24px;
+transition: all .5s;
+font-size: 1.35em;
+}
+    .item h4, .item p {
+color:#999; 
+font-size: 16px;
+transition: all .5s;
+}
+    .item p{
+    margin: 11px 0;
+    font-family: inherit;
+    font-weight: 300;
+    line-height: 22px;
+    text-rendering: optimizelegibility;    
+    }
+	
+	#img-carousel .item, #img-carousel-2 .item { padding: 5px;}
+	
+.mix-Match a:hover, .mix-Match a:focus {
+  	    text-decoration: none;
+    }
+	
+	h3:hover {color:#333;}
+	h4:hover {color:#333;}
+	
+	.fancybox-custom .fancybox-skin {
+		box-shadow: 0 0 50px #222;
+	}
+		
+	@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+	
+   .fade-in {
+	opacity:0;  /* make things invisible upon start */
+    animation:fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+
+    animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+
+    animation-duration:1.5s;
+    animation-delay: .2s
+}
+
+
+   .fade-in-2 {
+	opacity:0;  /* make things invisible upon start */
+    animation:fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+
+    animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+
+    animation-duration:1.5s;
+    animation-delay: 1s;
+    padding: 0 20px;
+}
+	
+	.owl-theme .owl-controls {
+}
+
+.owl-pagination { display:none;}
+	
+
+#img-carousel .item{
+  display: block;
+  padding: 5px 16px;
+  margin: 5px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+.owl-theme .owl-controls .owl-buttons div {
+  padding: 5px 9px;
+}
+
+ .owl-theme .owl-controls.clickable .owl-buttons div:active{
+opacity:1 !important;	 
+ }
+ 
+.owl-theme .owl-buttons i{
+  margin-top: 0px;
+}
+ 
+//To move navigation buttons outside use these settings:
+ 
+.owl-theme .owl-controls .owl-buttons div {
+  position: absolute;
+}
+ 
+.owl-theme .owl-controls .owl-buttons .owl-prev{
+  left: -45px;
+  top: 55px;
+  transition: all .5s; 
+}
+ 
+.owl-theme .owl-controls .owl-buttons .owl-next{
+  right: -45px;
+  top: -55px;
+  transition: all .5s;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+    padding: 0px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.owl-theme .owl-controls .owl-buttons div {
+    padding: 5px 20px;
+}
+
+	.desktop { display:block;}
+	.mobile { display:none;}
+	.large {display:none;}
+
+.front-top{
+        transition: all .5s;
+}
+
+.item-cont {
+position: relative;
+  margin:0 auto;
+}
+
+.item-cont img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity .8s ease-in-out;
+  -moz-transition: opacity .8s ease-in-out;
+  -o-transition: opacity .8s ease-in-out;
+  transition: opacity .8s ease-in-out;
+}
+
+.item-cont img.fTop:hover {
+  opacity:0;
+}
+
+.title-text {
+    margin-top: 105%;
+}
+.row{
+margin-top:50px;
+}
+.video-container {
+		width: 100%;
+	}
+
+@media only screen and (max-width: 738px) {
+body > section > .std {
+padding:0;
+}
+}
+@media only screen and (max-width: 480px) {
+	
+	.owl-buttons {
+    margin-top: -20px;
+	}
+    #img-carousel-2 .owl-buttons {
+    margin-top: 5px;
+     }
+	
+	.desktop, .large { display:none;}
+	.mobile { display:block;}
+      
+
+}
+@media only screen and (min-width: 1025px) {
+	
+	.desktop { display:none;}
+	.large {display:block;}
+        .mix-Match .container{
+              width:100%;
+         }
+       .mix-Match .span12 {
+       width:100%;
+}
+}
+ </style> 
+                                  
+  </head>
+   <body class="mix-Match" ontouchstart="">
+<div ng-controller="mainController" >
+<div align="center" >
+<!----<img class="fade-in large" src="http://www.tyr.com/wp-content/uploads/2017/01/TYR_LAVA_2500x625.jpg" alt="TYR Avictor Lava - LARGE" /> 
+<img class="fade-in desktop" src="http://www.tyr.com/wp-content/uploads/2017/01/TYR_LAVA_2500x625.jpg" alt="TYR Avictor Lava - MEDIUM" /> 
+<img class="fade-in mobile" src="http://www.tyr.com/wp-content/uploads/2017/01/TYR_LAVA_800x800.jpg" alt="TYR Avictor Lava- MOBILE" />------>
+    <div class="video-container">
+      <video autoplay controls loop width="100%" poster="http://www.tyr.com/wp-content/uploads/2017/01/New-ArrivalsV2_2500x625.jpg" type="video/mp4">
+            <source src="http://www.tyr.com/wp-content/uploads/2017/01/TYR_Active_noSound.mp4" type="video/mp4">
+        </video>
+         <!---- <iframe width="1920" height="1080" src="https://www.youtube.com/embed/kuVCAbHfkmQ?autoplay=1&loop=1&playlist=kuVCAbHfkmQ&modestbranding=1&origin=http://tyr.com&rel=0" frameborder="0" allowfullscreen></iframe>------->
+       
+</div>
+<div id="demo" class="fade-in-2">
+<div class="container">
+
+    <div class="row" ng-repeat="collection in collections">    
+        <h2 class="collectionTitle"> {{ collection.name }} </h2>
+        <div class="span12">
+<div id="img-carousel" class="owl-carousel owl-theme" >
+                <div class="item" ng-repeat="style in collection.styles">
+                  <div class="item-cont" >
+		              <a class="fancybox fancybox.iframe" href="http://www.tyr.com/shop/quickview/product/iframe/sku/{{ style.sku }}/">
+                          <img class="bTop" ng-src="http://www.tyr.com/wp-content/uploads/2017/01/{{ style.bottomimg }}" alt="{{ style.title + ' ' + style.name + ' - Back ' + style.color }}"/>
+                          <img class="fTop" ng-src="http://www.tyr.com/wp-content/uploads/2017/01/{{ style.topimg }}" alt="{{ style.title + ' ' + style.name + ' - Front ' + style.color }}"/>
+                           </a>
+                   </div>
+                  <div class="title-text">
+				<a class="fancybox fancybox.iframe" href="http://www.tyr.com/shop/quickview/product/iframe/sku/{{ style.sku }}/">
+                      <h3>{{ style.name }}</h3>
+                    <p>{{ style.color }}</p>
+                      </a>
+                </div>
+    </div>
+    </div>
+        </div>
+    </div>
+    </div>
+<!--------<div class="row">
+<div class="span12">
+<div id="img-carousel" class="owl-carousel owl-theme">
+
+                <div class="item">
+                  <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
+                   <img class="bTop" src="/wp-content/uploads/2017/01/ALM6A-176_alt02.jpg" alt="MEN'S AVICTOR LAVA JAMMER - BACK BLACK/BLUE/RED"/>
+                   <img class="fTop" src="/wp-content/uploads/2017/01/ALM6A-176_alt01.jpg" alt="MEN'S AVICTOR LAVA JAMMER- FRONT BLACK/BLUE/RED"/>
+                   </a>
+                   </div>
+				<div class="title-text">
+				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
+                      <h3>MEN'S AVICTOR LAVA JAMMER SWIMSUIT</h3>
+                      <h4>BLACK/BLUE/RED</h4>
+                      </a>
+                </div>
+                </div>
+                
+                               <div class="item">
+                  <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
+                   <img class="bTop" src="/wp-content/uploads/2017/01/ALM6A-547_alt02.jpg" alt="MEN'S AVICTOR LAVA JAMMER- BACK PURPLE/PINK"/>
+                   <img class="fTop" src="/wp-content/uploads/2017/01/ALM6A-547_alt01.jpg" alt="MEN'S AVICTOR LAVA JAMMMER - FRONT PURPLE/PINK"/>
+                   </a>
+                   </div>
+				<div class="title-text">
+				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
+                      <h3>MEN'S AVICTOR LAVA JAMMER SWIMSUIT</h3>
+                      <h4>PURPLE/PINK</h4>
+                      </a>
+                </div>
+                </div>
+                
+                <div class="item">
+                  <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
+                   <img class="bTop" src="/wp-content/uploads/2017/01/ALMH6A-176_alt02.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - BACK BLACK/BLUE/RED"/>
+                   <img class="fTop" src="/wp-content/uploads/2017/01/ALMH6A-176_alt01.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - FRONT BLACK/BLUE/RED"/>
+                   </a>
+                   </div>
+				<div class="title-text">
+				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
+                      <h3>MEN'S AVICTOR LAVA HIGH JAMMER SWIMSUIT</h3>
+                      <h4>BLACK/BLUE/RED</h4>
+                      </a>
+                </div>
+                </div>
+
+                <div class="item">
+                  <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
+                   <img class="bTop" src="/wp-content/uploads/2017/01/ALMH6A-547_alt02.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - BACK PURPLE/PINK"/>
+                   <img class="fTop" src="/wp-content/uploads/2017/01/ALMH6A-547_alt01.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - FRONT PURPLE/PINK"/>
+                   </a>
+                   </div>
+				<div class="title-text">
+				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
+                      <h3>MEN'S AVICTOR LAVA HIGH JAMMER SWIMSUIT</h3>
+                      <h4>PURPLE/PINK</h4>
+                      </a>
+                </div>
+                </div>
+                
+                <div class="item">
+                  <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
+                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFOP6A-176_alt02.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - BACK BLACK/BLUE/RED"/>
+                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFOP6A-176_alt01.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - FRONT BLACK/BLUE/RED"/>
+                   </a>
+                   </div>
+				<div class="title-text">
+				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
+                      <h3>WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT</h3>
+                      <h4>BLACK/BLUE/RED</h4>
+                      </a>
+                </div>
+                </div>
+                
+                <div class="item">
+                  <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
+                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFOP6A-547_alt02.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - BACK PURPLE/PINK"/>
+                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFOP6A-547_alt01.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - FRONT PURPLE/PINK"/>
+                   </a>
+                   </div>
+				<div class="title-text">
+				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
+                      <h3>WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT</h3>
+                      <h4>PURPLE/PINK</h4>
+                      </a>
+                </div>
+                </div>
+                <div class="item">
+                  <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFC6A/">
+                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFC6A-176_alt02.jpg" alt="WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT - BACK BLACK/BLUE/RED"/>
+                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFC6A-176_alt01.jpg" alt="WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT - FRONT BLACK/BLUE/RED"/>
+                   </a>
+                   </div>
+				<div class="title-text">
+				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFC6A/">
+                      <h3>WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT</h3>
+                      <h4>BLACK/BLUE/RED</h4>
+                      </a>
+                </div>
+                </div>
+                <div class="item">
+                  <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
+                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFC6A-547_alt02.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT- BACK PURPLE/PINK"/>
+                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFC6A-547_alt01.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT- FRONT PURPLE/PINK"/>
+                   </a>
+                   </div>
+				<div class="title-text">
+				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
+                      <h3>WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT</h3>
+                      <h4>PURPLE/PINK</h4>
+                      </a>
+                </div>
+                </div>
+           
+
+              </div>
+            </div>
+          </div>
+        </div>---------->
+        
+		
+    <!-------<br><div class="container">
+          <div class="row">
+            <div class="span12">
+
+              <div id="img-carousel-2" class="owl-carousel">
+
+                <div class="item">
+                <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
+                  	<img class="bTop" src="/wp-content/uploads/2016/08/BEN7A-420_alt04.jpg" alt="TYR ENSO BIKINI BOTTOM - BACK BLUE">
+                    <img class="fTop" src="/wp-content/uploads/2016/08/BEN7A-420_alt1.jpg" alt="TYR ENSO BIKINI BOTTOM - FRONT BLUE">
+                    </a>
+                    </div>
+                    <div class="title-text">
+                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
+                      <h3>ENSO</h3>
+                      <h4>BIKINI BOTTOM</h4>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="item">
+                <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
+                  	<img class="bTop" src="/wp-content/uploads/2016/08/BEN7A-810_alt04.jpg" alt="TYR ENSO BIKINI BOTTOM - BACK ORANGE">
+                    <img class="fTop" src="/wp-content/uploads/2016/08/BEN7A-810_alt1.jpg" alt="TYR ENSO BIKINI BOTTOM - FRONT ORANGE">
+                    </a>
+                    </div>
+                     <div class="title-text">
+                     <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
+                      <h3>ENSO</h3>
+                      <h4>BIKINI BOTTOM</h4>
+                    </a>
+                </div>
+                </div>
+
+                <div class="item">
+                <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
+                  	<img class="bTop" src="/wp-content/uploads/2016/08/BPAS7A-440_alt04.jpg" alt="TYR PASEO BIKINI BOTTOM - BACK TURQUOISE">
+                    <img class="fTop" src="/wp-content/uploads/2016/08/BPAS7A-440_alt01.jpg" alt="TYR PASEO BIKINI BOTTOM - FRONT TURQUOISE">
+                    </a>
+                    </div>
+                    <div class="title-text">
+                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
+                      <h3>PASEO</h3>
+                      <h4>BIKINI BOTTOM</h4>
+                    </a>
+                    </div>
+                </div>
+
+				<div class="item">
+                <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
+                  	<img class="bTop" src="/wp-content/uploads/2016/08/BPAS7A-670_alt04.jpg" alt="TYR PASEO BIKINI BOTTOM - BACK PINK">
+                    <img class="fTop" src="/wp-content/uploads/2016/08/BPAS7A-670_alt01.jpg" alt="TYR PASEO BIKINI BOTTOM - FRONT PINK">
+                    </a>
+                    </div>
+                   <div class="title-text">
+                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
+                      <h3>PASEO</h3>
+                      <h4>BIKINI BOTTOM</h4>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="item">
+                <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BROHA7A/">
+                  	<img class="bTop" src="/wp-content/uploads/2016/08/BROHA7A-510_alt04.jpg" alt="TYR OHANA BIKINI BOTTOM - BACK PURPLE">
+                    <img class="fTop" src="/wp-content/uploads/2016/08/BROHA7A-510_alt01.jpg" alt="TYR OHANA BIKINI BOTTOM - FRONT PURPLE">
+                    </a>
+                    </div>
+                    <div class="title-text">
+                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BROHA7A/">
+                      <h3>OHANA</h3>
+                      <h4>BIKINI BOTTOM</h4>
+                    </a>
+                </div>
+                </div>
+
+                <div class="item">
+                <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
+                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSO7A-001_alt04.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - BACK BLACK">
+                    <img class="fTop" src="/wp-content/uploads/2016/08/BSO7A-001_alt01.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - FRONT BLACK">
+                    </a>
+                    </div>
+                     <div class="title-text">
+                     <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
+                      <h3>SOLID</h3>
+                      <h4>ACTIVE BIKINI BOTTOM</h4>
+                    </a>
+                    </div>
+                </div>
+                
+                <div class="item">
+                <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
+                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSO7A-019_alt04.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - BACK GREY">
+                    <img class="fTop" src="/wp-content/uploads/2016/08/BSO7A-019_alt01.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - FRONT GREY">
+                    </a>
+                    </div>
+                     <div class="title-text">
+                     <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
+                      <h3>SOLID</h3>
+                      <h4>ACTIVE BIKINI BOTTOM</h4>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="item">
+                <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
+                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSOD7A-428_alt04.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM- BACK ROYAL">
+                    <img class="fTop" src="/wp-content/uploads/2016/08/BSOD7A-428_alt1.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - FRONT ROYAL">
+                    </a>
+                    </div>
+                    <div class="title-text">
+                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
+                      <h3>DURAFAST ONE SOLIDS</h3>
+                      <h4>BIKINI BOTTOM</h4>
+                    </a>
+                    </div>
+                </div>
+              
+              <div class="item">
+                <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
+                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSO7A-001_alt04-1.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM- BACK FL. PINK">
+                    <img class="fTop" src="/wp-content/uploads/2016/08/BSOD7A-693_alt2.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - FRONT FL. PINK">
+                    </a>
+                    </div>
+                    <div class="title-text">
+                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
+                      <h3>DURAFAST ONE SOLIDS</h3>
+                      <h4>BIKINI BOTTOM</h4>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="item">
+                 <div class="item-cont">
+		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
+                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSOD7A-820_alt04.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - BACK  FL. ORANGE">
+                    <img class="fTop" src="/wp-content/uploads/2016/08/BSOD7A-820_alt1.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - FRONT FL. ORANGE">
+                    </a>
+                    </div>
+                      <div class="title-text">
+                      <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
+                      <h3>DURAFAST ONE SOLIDS</h3>
+                      <h4>BIKINI BOTTOM</h4>
+                    </a>
+                </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>------------>
+     </div>
+<br><br>      
+       </div>
+     <script>
        function mainController($scope) {
         
            $scope.paths = [{ image:"http://www.tyr.com/wp-content/uploads/2017/01/" }];
@@ -408,8 +956,8 @@
                {
                 title: "TYR Solid",
                 name: "Women's Kalani Capri", 
-                topimg:"TKSO7-001_alt1.jpg", 
-                bottomimg:"TKSO7-001_alt2.jpg",
+                topimg:"TKS07-001_alt1-1.jpg", 
+                bottomimg:"TKS07-001_alt2-1.jpg",
                 color: "Black",
                 sku: "TKSO7A"
                },
@@ -453,10 +1001,10 @@
                {
                 title: "TYR Machu",
                 name: "Women's Cutoutfit", 
-                topimg:"TCHMH7-461_alt1.jpg", 
-                bottomimg:"TCHMH7-461_alt2.jpg",
+                topimg:"TCMH7-185_alt1.jpg", 
+                bottomimg:"TCMH7-185_alt2.jpg",
                 color: "Blue/Multi",
-                sku: "TCHMH7A"
+                sku: "TCMH7A"
                },
                {
                 title: "TYR Machu",
@@ -491,555 +1039,267 @@
                 sku: "BMH7A"
                }
            ]
+           },
+           {
+               name: 'TYR Panama',
+               styles: [
+               {
+                title: "TYR Panama",
+                name: "Women's Cutoutfit", 
+                topimg:"TPA7-696_alt1.jpg", 
+                bottomimg:"TPA7-696_alt2.jpg",
+                color: "Pink/Multi",
+                sku: "TPA7A"
+               },
+               {
+                title: "TYR Panama",
+                name: "Women's Valleyfit", 
+                topimg:"TTPA7-696_alt1.jpg", 
+                bottomimg:"TTPA7-696_alt2.jpg",
+                color: "Pink/Multi",
+                sku: "TTPA7A"
+               },
+               {
+                title: "TYR Panama",
+                name: "Women's Pacific Tieback Top", 
+                topimg:"BVTPA7-696_alt1.jpg", 
+                bottomimg:"BVTPA7-696_alt2.jpg",
+                color: "Pink/Multi",
+                sku: "BVTPA7A"
+               },
+               {
+                title: "TYR Panama",
+                name: "Women's Twist Top", 
+                topimg:"BDPA7-696_alt1.jpg", 
+                bottomimg:"BDPA7-696_alt2.jpg",
+                color: "Pink/Multi",
+                sku: "BDPA7A"
+               },
+               {
+                title: "TYR Panama",
+                name: "Women's Bikini Bottom", 
+                topimg:"BPA7-696_alt1.jpg", 
+                bottomimg:"BPA7-696_alt2.jpg",
+                color: "Pink/Multi",
+                sku: "BPA7A"
+               }
+           ]
+           },
+           {
+               name: 'TYR Ravana',
+               styles: [
+               {
+                title: "TYR Ravana",
+                name: "Women's Cutoutfit", 
+                topimg:"TRA7-004_alt1.jpg", 
+                bottomimg:"TRA7-004_alt2.jpg",
+                color: "Black/Multi",
+                sku: "TRA7A"
+               },
+               {
+                title: "TYR Ravana",
+                name: "Women's Trinityfit", 
+                topimg:"TCRA7-004_alt1.jpg", 
+                bottomimg:"TCRA7-004_alt2.jpg",
+                color: "Black/Multi",
+                sku: "TCRA7A"
+               },
+               {
+                title: "TYR Ravana",
+                name: "Women's Crosscut Tieback Top", 
+                topimg:"BTRA7-004_alt1.jpg", 
+                bottomimg:"BTRA7-004_alt2.jpg",
+                color: "Black/Multi",
+                sku: "BTRA7A"
+               },
+               {
+                title: "TYR Ravana",
+                name: "Women's Lula Bikini Bottom", 
+                topimg:"BSO7-019_alt1.jpg", 
+                bottomimg:"BSO7-019_alt2.jpg",
+                color: "Grey",
+                sku: "BSO7A"
+               },
+               {
+                title: "TYR Ravana",
+                name: "Women's Lula Bikini Bottom", 
+                topimg:"BSO7-401_alt1.jpg", 
+                bottomimg:"BSO7-401_alt2.jpg",
+                color: "Navy",
+                sku: "BSO7A"
+               }
+           ]
+           },
+           {
+               name: 'TYR Electro',
+               styles: [
+               {
+                title: "TYR Electro",
+                name: "Women's Cutoutfit", 
+                topimg:"TELE7-004_alt1.jpg", 
+                bottomimg:"TELE7-004_alt2.jpg",
+                color: "Black/Multi",
+                sku: "TELE7A"
+               },
+               {
+                title: "TYR Electro",
+                name: "Women's Crosscut Tieback Top", 
+                topimg:"BTELE7-004_alt1.jpg", 
+                bottomimg:"BTELE7-004_alt2.jpg",
+                color: "Black/Multi",
+                sku: "BTELE7A"
+               },
+                   {
+                title: "TYR Electro",
+                name: "Women's Cutoutfit", 
+                topimg:"TELE7-418_alt1.jpg", 
+                bottomimg:"TELE7-418_alt2.jpg",
+                color: "Navy/Multi",
+                sku: "TELE7A"
+               },
+               {
+                title: "TYR Electro",
+                name: "Women's Crosscut Tieback Top", 
+                topimg:"BTELE7-418_alt1.jpg", 
+                bottomimg:"BTELE7-418_alt2.jpg",
+                color: "Navy/Multi",
+                sku: "BTELE7A"
+               },
+               {
+                title: "TYR Electro",
+                name: "Women's Bikini Bottom", 
+                topimg:"BSOD7-001_alt1.jpg", 
+                bottomimg:"BSOD7-001_alt2.jpg",
+                color: "Black",
+                sku: "BSOD7A"
+               },
+               {
+                title: "TYR Electro",
+                name: "Women's Bikini Bottom", 
+                topimg:"BSOD7-428_alt1.jpg", 
+                bottomimg:"BSOD7-428_alt2.jpg",
+                color: "Royal",
+                sku: "BSOD7A"
+               },
+               {
+                title: "TYR Electro",
+                name: "Women's Bikini Bottom", 
+                topimg:"BSOD7-693_alt1.jpg", 
+                bottomimg:"BSOD7-693_alt2.jpg",
+                color: "Fl. Pink",
+                sku: "BSOD7A"
+               }
+           ]
+           },
+           {
+               name: 'TYR Sumatra',
+               styles: [
+               {
+                title: "TYR Sumatra",
+                name: "Women's Cutoutfit", 
+                topimg:"TCSUM7-004_alt1.jpg", 
+                bottomimg:"TCSUM7-004_alt2.jpg",
+                color: "Black/Multi",
+                sku: "TCSUM7A"
+               },
+               {
+                title: "TYR Sumatra",
+                name: "Women's Crosscut Tieback", 
+                topimg:"TSUM7-004_alt1.jpg", 
+                bottomimg:"TSUM7-004_alt2.jpg",
+                color: "Black/Multi",
+                sku: "TSUM7A"
+               },
+               {
+                title: "TYR Sumatra",
+                name: "Women's Trinity Top", 
+                topimg:"BCSUM7-004_alt1.jpg", 
+                bottomimg:"BCSUM7-004_alt2.jpg",
+                color: "Black/Multi",
+                sku: "BCSUM7A"
+               },
+               {
+                title: "TYR Sumatra",
+                name: "Women's Bikini Bottom", 
+                topimg:"BSUM7-004_alt1.jpg", 
+                bottomimg:"BSUM7-004_alt2.jpg",
+                color: "Black/Multi",
+                sku: "BSUM7A"
+               },
+               {
+                title: "TYR Sumatra",
+                name: "Women's Bikini Bottom", 
+                topimg:"BSOD7-693_alt1.jpg", 
+                bottomimg:"BSOD7-693_alt2.jpg",
+                color: "Fl. Pink",
+                sku: "BSOD7A"
+               },
+               {
+                title: "TYR Sumatra",
+                name: "Women's Bikini Bottom", 
+                topimg:"BSOD7-820_alt1.jpg", 
+                bottomimg:"BSOD7-820_alt2.jpg",
+                color: "Fl. Orange",
+                sku: "BSOD7A"
+               }
+           ]
+           },
+           {
+               name: 'TYR Motus',
+               styles: [
+               {
+                title: "TYR Motus",
+                name: "Women's Cutoutfit", 
+                topimg:"TMOT7-696_alt1.jpg", 
+                bottomimg:"TMOT7-696_alt2.jpg",
+                color: "Pink/Multi",
+                sku: "TMOT7A"
+               },
+               {
+                title: "TYR Motus",
+                name: "Women's Bali Top", 
+                topimg:"BTMOT7-696_alt1.jpg", 
+                bottomimg:"BTMOT7-696_alt2.jpg",
+                color: "Pink/Multi",
+                sku: "BTMOT7A"
+               },
+               {
+                title: "TYR Motus",
+                name: "Women's Trinity Top", 
+                topimg:"BCMOT7-696_alt1.jpg", 
+                bottomimg:"BCMOT7-696_alt2.jpg",
+                color: "Pink/Multi",
+                sku: "BCMOT7A"
+               },
+               {
+                title: "TYR Motus",
+                name: "Women's Bikini Bottom", 
+                topimg:"BSUM7-004_alt1.jpg", 
+                bottomimg:"BSUM7-004_alt2.jpg",
+                color: "Black/Multi",
+                sku: "BSUM7A"
+               },
+               {
+                title: "TYR Motus",
+                name: "Women's Bikini Bottom", 
+                topimg:"BSOD7-693_alt1.jpg", 
+                bottomimg:"BSOD7-693_alt2.jpg",
+                color: "Fl. Pink",
+                sku: "BSOD7A"
+               },
+               {
+                title: "TYR Motus",
+                name: "Women's Bikini Bottom", 
+                topimg:"BSOD7-428_alt1.jpg", 
+                bottomimg:"BSOD7-428_alt2.jpg",
+                color: "Royal",
+                sku: "BSOD7A"
+               }
+           ]
            }
         ];
              }
       </script>
-            <!-----			width: "840px",
-			height: "576px",------>                 
-<style type="text/css">
-body #content[role="main"] > .main-container, body #content[role="main"] > .breadcrumbs, body #content[role="main"] > #top-desc {
-    width: 100% !important;
-    max-width: 100%;
-    margin-top: -24px;
-}
-    h2.collectionTitle{
-        padding: 0 2%;
-        text-align: center;
-        text-transform: uppercase;
-        font-family: futura;
-        color: #999;
-    }
-    h2.collectionTitle::before {
-    border-top: 1px solid #c9c9c9;
-    width: 40%;
-    content: '';
-    display: block;
-    position: relative;
-    top: 16px;
-    left: 0;
-    z-index: 0;
-}
-
-h2.collectionTitle::after {
-    border-top: 1px solid #c9c9c9;
-    width: 41%;
-    content: '';
-    display: block;
-    position: relative;
-    bottom: 18px;
-    left: 61%;
-    z-index: 0;
-}
-    .item h3 {
-color:#666; 
-line-height: 24px;
-transition: all .5s;
-font-size: 1.35em;
-}
-    .item h4, .item p {
-color:#999; 
-font-size: 16px;
-transition: all .5s;
-}
-    .item p{
-    margin: 11px 0;
-    font-family: inherit;
-    font-weight: 300;
-    line-height: 22px;
-    text-rendering: optimizelegibility;    
-    }
-	
-	#img-carousel .item, #img-carousel-2 .item { padding: 5px;}
-	
-.mix-Match a:hover, .mix-Match a:focus {
-  	    text-decoration: none;
-    }
-	
-	h3:hover {color:#333;}
-	h4:hover {color:#333;}
-	
-	.fancybox-custom .fancybox-skin {
-		box-shadow: 0 0 50px #222;
-	}
-		
-	@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-	
-   .fade-in {
-	opacity:0;  /* make things invisible upon start */
-    animation:fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-
-    animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-
-    animation-duration:1.5s;
-    animation-delay: .2s
-}
-
-
-   .fade-in-2 {
-	opacity:0;  /* make things invisible upon start */
-    animation:fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-
-    animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-
-    animation-duration:1.5s;
-    animation-delay: 1s;
-    padding: 0 20px;
-}
-	
-	.owl-theme .owl-controls {
-}
-
-.owl-pagination { display:none;}
-	
-
-#img-carousel .item{
-  display: block;
-  padding: 5px 16px;
-  margin: 5px;
-  color: #FFF;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
-}
-.owl-theme .owl-controls .owl-buttons div {
-  padding: 5px 9px;
-}
-
- .owl-theme .owl-controls.clickable .owl-buttons div:active{
-opacity:1 !important;	 
- }
- 
-.owl-theme .owl-buttons i{
-  margin-top: 0px;
-}
- 
-//To move navigation buttons outside use these settings:
- 
-.owl-theme .owl-controls .owl-buttons div {
-  position: absolute;
-}
- 
-.owl-theme .owl-controls .owl-buttons .owl-prev{
-  left: -45px;
-  top: 55px;
-  transition: all .5s; 
-}
- 
-.owl-theme .owl-controls .owl-buttons .owl-next{
-  right: -45px;
-  top: -55px;
-  transition: all .5s;
-}
-
-.owl-theme .owl-controls .owl-buttons div {
-    padding: 0px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-}
-.owl-theme .owl-controls .owl-buttons div {
-    padding: 5px 20px;
-}
-
-	.desktop { display:block;}
-	.mobile { display:none;}
-	.large {display:none;}
-
-.front-top{
-        transition: all .5s;
-}
-
-.item-cont {
-position: relative;
-  margin:0 auto;
-}
-
-.item-cont img {
-  position:absolute;
-  left:0;
-  -webkit-transition: opacity .8s ease-in-out;
-  -moz-transition: opacity .8s ease-in-out;
-  -o-transition: opacity .8s ease-in-out;
-  transition: opacity .8s ease-in-out;
-}
-
-.item-cont img.fTop:hover {
-  opacity:0;
-}
-
-.title-text {
-    margin-top: 105%;
-}
-.row{
-margin-top:50px;
-}
-    
-
-@media only screen and (max-width: 738px) {
-body > section > .std {
-padding:0;
-}
-}
-@media only screen and (max-width: 480px) {
-	
-	.owl-buttons {
-    margin-top: -20px;
-	}
-    #img-carousel-2 .owl-buttons {
-    margin-top: 5px;
-     }
-	
-	.desktop, .large { display:none;}
-	.mobile { display:block;}
-      
-
-}
-@media only screen and (min-width: 1025px) {
-	
-	.desktop { display:none;}
-	.large {display:block;}
-        .mix-Match .container{
-              width:100%;
-         }
-       .mix-Match .span12 {
-       width:100%;
-}
-}
- </style> 
-                                  
-  </head>
-   <body class="mix-Match" ontouchstart="">
-<div ng-controller="mainController" >
-<div align="center" >
-<!----<img class="fade-in large" src="http://www.tyr.com/wp-content/uploads/2017/01/TYR_LAVA_2500x625.jpg" alt="TYR Avictor Lava - LARGE" /> 
-<img class="fade-in desktop" src="http://www.tyr.com/wp-content/uploads/2017/01/TYR_LAVA_2500x625.jpg" alt="TYR Avictor Lava - MEDIUM" /> 
-<img class="fade-in mobile" src="http://www.tyr.com/wp-content/uploads/2017/01/TYR_LAVA_800x800.jpg" alt="TYR Avictor Lava- MOBILE" />------>
-    <div class=video-container>
-        <video autoplay loop width="100%">
-            <source src="https://tyrstaging.wsmtechs.net/wp-content/uploads/2017/01/Duo-Sexy_Clip1.mp4" type="video/mp4">
-        
-        </video>
-    </div>
-</div>
-<div id="demo" class="fade-in-2">
-<div class="container">
-
-    <div class="row" ng-repeat="collection in collections">    
-        <h2 class="collectionTitle"> {{ collection.name }} </h2>
-        <div class="span12">
-<div id="img-carousel" class="owl-carousel owl-theme" >
-                <div class="item" ng-repeat="style in collection.styles">
-                  <div class="item-cont" >
-		              <a class="fancybox fancybox.iframe" href="http://www.tyr.com/shop/quickview/product/iframe/sku/{{ style.sku }}/">
-                          <img class="bTop" ng-src="http://www.tyr.com/wp-content/uploads/2017/01/{{ style.bottomimg }}" alt="{{ style.title + ' ' + style.name + ' - Back ' + style.color }}"/>
-                          <img class="fTop" ng-src="http://www.tyr.com/wp-content/uploads/2017/01/{{ style.topimg }}" alt="{{ style.title + ' ' + style.name + ' - Front ' + style.color }}"/>
-                           </a>
-                   </div>
-                  <div class="title-text">
-				<a class="fancybox fancybox.iframe" href="http://www.tyr.com/shop/quickview/product/iframe/sku/{{ style.sku }}/">
-                      <h3>{{ style.name }}</h3>
-                    <p>{{ style.color }}</p>
-                      </a>
-                </div>
-    </div>
-    </div>
-        </div>
-    </div>
-    </div>
-<!--------<div class="row">
-<div class="span12">
-<div id="img-carousel" class="owl-carousel owl-theme">
-
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALM6A-176_alt02.jpg" alt="MEN'S AVICTOR LAVA JAMMER - BACK BLACK/BLUE/RED"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALM6A-176_alt01.jpg" alt="MEN'S AVICTOR LAVA JAMMER- FRONT BLACK/BLUE/RED"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
-                      <h3>MEN'S AVICTOR LAVA JAMMER SWIMSUIT</h3>
-                      <h4>BLACK/BLUE/RED</h4>
-                      </a>
-                </div>
-                </div>
-                
-                               <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALM6A-547_alt02.jpg" alt="MEN'S AVICTOR LAVA JAMMER- BACK PURPLE/PINK"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALM6A-547_alt01.jpg" alt="MEN'S AVICTOR LAVA JAMMMER - FRONT PURPLE/PINK"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
-                      <h3>MEN'S AVICTOR LAVA JAMMER SWIMSUIT</h3>
-                      <h4>PURPLE/PINK</h4>
-                      </a>
-                </div>
-                </div>
-                
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALMH6A-176_alt02.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - BACK BLACK/BLUE/RED"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALMH6A-176_alt01.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - FRONT BLACK/BLUE/RED"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                      <h3>MEN'S AVICTOR LAVA HIGH JAMMER SWIMSUIT</h3>
-                      <h4>BLACK/BLUE/RED</h4>
-                      </a>
-                </div>
-                </div>
-
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALMH6A-547_alt02.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - BACK PURPLE/PINK"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALMH6A-547_alt01.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - FRONT PURPLE/PINK"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                      <h3>MEN'S AVICTOR LAVA HIGH JAMMER SWIMSUIT</h3>
-                      <h4>PURPLE/PINK</h4>
-                      </a>
-                </div>
-                </div>
-                
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFOP6A-176_alt02.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - BACK BLACK/BLUE/RED"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFOP6A-176_alt01.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - FRONT BLACK/BLUE/RED"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
-                      <h3>WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT</h3>
-                      <h4>BLACK/BLUE/RED</h4>
-                      </a>
-                </div>
-                </div>
-                
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFOP6A-547_alt02.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - BACK PURPLE/PINK"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFOP6A-547_alt01.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - FRONT PURPLE/PINK"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
-                      <h3>WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT</h3>
-                      <h4>PURPLE/PINK</h4>
-                      </a>
-                </div>
-                </div>
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFC6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFC6A-176_alt02.jpg" alt="WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT - BACK BLACK/BLUE/RED"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFC6A-176_alt01.jpg" alt="WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT - FRONT BLACK/BLUE/RED"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFC6A/">
-                      <h3>WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT</h3>
-                      <h4>BLACK/BLUE/RED</h4>
-                      </a>
-                </div>
-                </div>
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFC6A-547_alt02.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT- BACK PURPLE/PINK"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFC6A-547_alt01.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT- FRONT PURPLE/PINK"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                      <h3>WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT</h3>
-                      <h4>PURPLE/PINK</h4>
-                      </a>
-                </div>
-                </div>
-           
-
-              </div>
-            </div>
-          </div>
-        </div>---------->
-        
-		
-    <!-------<br><div class="container">
-          <div class="row">
-            <div class="span12">
-
-              <div id="img-carousel-2" class="owl-carousel">
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BEN7A-420_alt04.jpg" alt="TYR ENSO BIKINI BOTTOM - BACK BLUE">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BEN7A-420_alt1.jpg" alt="TYR ENSO BIKINI BOTTOM - FRONT BLUE">
-                    </a>
-                    </div>
-                    <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
-                      <h3>ENSO</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BEN7A-810_alt04.jpg" alt="TYR ENSO BIKINI BOTTOM - BACK ORANGE">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BEN7A-810_alt1.jpg" alt="TYR ENSO BIKINI BOTTOM - FRONT ORANGE">
-                    </a>
-                    </div>
-                     <div class="title-text">
-                     <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
-                      <h3>ENSO</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                </div>
-                </div>
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BPAS7A-440_alt04.jpg" alt="TYR PASEO BIKINI BOTTOM - BACK TURQUOISE">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BPAS7A-440_alt01.jpg" alt="TYR PASEO BIKINI BOTTOM - FRONT TURQUOISE">
-                    </a>
-                    </div>
-                    <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
-                      <h3>PASEO</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-
-				<div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BPAS7A-670_alt04.jpg" alt="TYR PASEO BIKINI BOTTOM - BACK PINK">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BPAS7A-670_alt01.jpg" alt="TYR PASEO BIKINI BOTTOM - FRONT PINK">
-                    </a>
-                    </div>
-                   <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
-                      <h3>PASEO</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BROHA7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BROHA7A-510_alt04.jpg" alt="TYR OHANA BIKINI BOTTOM - BACK PURPLE">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BROHA7A-510_alt01.jpg" alt="TYR OHANA BIKINI BOTTOM - FRONT PURPLE">
-                    </a>
-                    </div>
-                    <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BROHA7A/">
-                      <h3>OHANA</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                </div>
-                </div>
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSO7A-001_alt04.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - BACK BLACK">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BSO7A-001_alt01.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - FRONT BLACK">
-                    </a>
-                    </div>
-                     <div class="title-text">
-                     <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
-                      <h3>SOLID</h3>
-                      <h4>ACTIVE BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-                
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSO7A-019_alt04.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - BACK GREY">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BSO7A-019_alt01.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - FRONT GREY">
-                    </a>
-                    </div>
-                     <div class="title-text">
-                     <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
-                      <h3>SOLID</h3>
-                      <h4>ACTIVE BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSOD7A-428_alt04.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM- BACK ROYAL">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BSOD7A-428_alt1.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - FRONT ROYAL">
-                    </a>
-                    </div>
-                    <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                      <h3>DURAFAST ONE SOLIDS</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-              
-              <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSO7A-001_alt04-1.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM- BACK FL. PINK">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BSOD7A-693_alt2.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - FRONT FL. PINK">
-                    </a>
-                    </div>
-                    <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                      <h3>DURAFAST ONE SOLIDS</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-
-                <div class="item">
-                 <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSOD7A-820_alt04.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - BACK  FL. ORANGE">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BSOD7A-820_alt1.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - FRONT FL. ORANGE">
-                    </a>
-                    </div>
-                      <div class="title-text">
-                      <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                      <h3>DURAFAST ONE SOLIDS</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-
-        </div>------------>
-     </div>
-<br><br>      
-       </div>
     <script src="owl-carousel/owl.carousel.min.js"></script>
 
     <!-- Frontpage Demo -->
