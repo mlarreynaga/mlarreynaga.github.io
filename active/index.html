@@ -58,7 +58,29 @@
 
 });
 </script>
-     
+		<script type="text/javascript">
+			 window.onload=function(){
+			var playedBefore = false,
+    myvideo = document.getElementById('myvideo');
+myvideo.load();// Load the video ahead of time.
+myvideo.addEventListener('playing',
+
+function () {
+    if (!playedBefore) {
+        setTimeout(function () {
+            var myposter = document.getElementById('myposter');
+            myposter.style.visibility = 'hidden';
+            myposter.style.opacity = '0';
+        }, 200); // Just a little extra time.
+    }
+    playedBefore = true;
+});
+document.getElementById('myplaybutton').onclick = function () {
+    myvideo.currentTime = 7;// Put the video at the right time for the poster.
+    myvideo.play();
+};
+             }
+	</script>	     
             <!-----			width: "840px",
 			height: "576px",------>                 
 <style type="text/css">
@@ -113,7 +135,23 @@ transition: all .5s;
     line-height: 22px;
     text-rendering: optimizelegibility;    
     }
-	
+  
+	#myposter{
+    position:absolute;
+    top:0;
+    left:0;
+}
+#myplaybutton {
+    position:absolute;
+    left:50%;
+    top:500px;
+}
+#myposter {
+    -webkit-transition: visibility 0.2s linear, opacity 0.2s linear;
+    -moz-transition: visibility 0.2s linear, opacity 0.2s linear;
+    -o-transition: visibility 0.2s linear, opacity 0.2s linear;
+    transition: visibility 0.2s linear, opacity 0.2s linear;
+}
 	#img-carousel .item, #img-carousel-2 .item { padding: 5px;}
 	
 .mix-Match a:hover, .mix-Match a:focus {
@@ -256,8 +294,8 @@ padding:0;
     margin-top: 5px;
      }
 	
-	.desktop, .large { display:none;}
-	.mobile { display:block;}
+	.desktop, .large { display:none !important;}
+	.mobile { display:block !important;}
       
 
 }
@@ -282,15 +320,19 @@ padding:0;
 <img class="fade-in desktop" src="http://www.tyr.com/wp-content/uploads/2017/01/TYR_LAVA_2500x625.jpg" alt="TYR Avictor Lava - MEDIUM" /> 
 <img class="fade-in mobile" src="http://www.tyr.com/wp-content/uploads/2017/01/TYR_LAVA_800x800.jpg" alt="TYR Avictor Lava- MOBILE" />------>
     <div class="video-container">
-      <video autoplay controls loop width="100%" poster="http://www.tyr.com/wp-content/uploads/2017/01/New-ArrivalsV2_2500x625.jpg" type="video/mp4">
-            <source src="http://www.tyr.com/wp-content/uploads/2017/01/TYR_Active_noSound.mp4" type="video/mp4">
-        </video>
-         <!---- <iframe width="1920" height="1080" src="https://www.youtube.com/embed/kuVCAbHfkmQ?autoplay=1&loop=1&playlist=kuVCAbHfkmQ&modestbranding=1&origin=http://tyr.com&rel=0" frameborder="0" allowfullscreen></iframe>------->
+      <video id="myvideo" width="100%" controls=""autoplay poster="http://www.tyr.com/wp-content/uploads/2017/02/Static_TYRActive.jpg">
+    <source id="mp4" src="http://www.tyr.com/wp-content/uploads/2017/01/TYR_Active_noSound.mp4" type="video/mp4">
+                <p>Your user agent does not support the HTML5 Video element.</p>
+</video>
+<img id="myposter" src="http://www.tyr.com/wp-content/uploads/2017/02/Static_TYRActive.jpg">
+                 
+        
+        <!----< <iframe class="mobile" width="1920" height="1080" src="https://www.youtube.com/embed/rsraotEqFUg?autoplay=1&loop=1&playlist=kuVCAbHfkmQ&modestbranding=1&origin=http://tyr.com&rel=0" frameborder="0" allowfullscreen></iframe>--------->
        
 </div>
 <div id="demo" class="fade-in-2">
 <div class="container">
-
+<h1>TYR 2017 Active/Sport Collection</h1>
     <div class="row" ng-repeat="collection in collections">    
         <h2 class="collectionTitle"> {{ collection.name }} </h2>
         <div class="span12">
@@ -298,8 +340,8 @@ padding:0;
                 <div class="item" ng-repeat="style in collection.styles">
                   <div class="item-cont" >
 		              <a class="fancybox fancybox.iframe" href="http://www.tyr.com/shop/quickview/product/iframe/sku/{{ style.sku }}/">
-                          <img class="bTop" ng-src="http://www.tyr.com/wp-content/uploads/2017/01/{{ style.bottomimg }}" alt="{{ style.title + ' ' + style.name + ' - Back ' + style.color }}"/>
-                          <img class="fTop" ng-src="http://www.tyr.com/wp-content/uploads/2017/01/{{ style.topimg }}" alt="{{ style.title + ' ' + style.name + ' - Front ' + style.color }}"/>
+                          <img class="bTop" ng-src="http://www.tyr.com/wp-content/uploads/2017/{{ style.bottomimg }}" alt="{{ style.title + ' ' + style.name + ' - Back ' + style.color }}"/>
+                          <img class="fTop" ng-src="http://www.tyr.com/wp-content/uploads/2017/{{ style.topimg }}" alt="{{ style.title + ' ' + style.name + ' - Front ' + style.color }}"/>
                            </a>
                    </div>
                   <div class="title-text">
@@ -313,296 +355,9 @@ padding:0;
         </div>
     </div>
     </div>
-<!--------<div class="row">
-<div class="span12">
-<div id="img-carousel" class="owl-carousel owl-theme">
 
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALM6A-176_alt02.jpg" alt="MEN'S AVICTOR LAVA JAMMER - BACK BLACK/BLUE/RED"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALM6A-176_alt01.jpg" alt="MEN'S AVICTOR LAVA JAMMER- FRONT BLACK/BLUE/RED"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
-                      <h3>MEN'S AVICTOR LAVA JAMMER SWIMSUIT</h3>
-                      <h4>BLACK/BLUE/RED</h4>
-                      </a>
-                </div>
-                </div>
-                
-                               <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALM6A-547_alt02.jpg" alt="MEN'S AVICTOR LAVA JAMMER- BACK PURPLE/PINK"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALM6A-547_alt01.jpg" alt="MEN'S AVICTOR LAVA JAMMMER - FRONT PURPLE/PINK"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALM6A/">
-                      <h3>MEN'S AVICTOR LAVA JAMMER SWIMSUIT</h3>
-                      <h4>PURPLE/PINK</h4>
-                      </a>
-                </div>
-                </div>
-                
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALMH6A-176_alt02.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - BACK BLACK/BLUE/RED"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALMH6A-176_alt01.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - FRONT BLACK/BLUE/RED"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                      <h3>MEN'S AVICTOR LAVA HIGH JAMMER SWIMSUIT</h3>
-                      <h4>BLACK/BLUE/RED</h4>
-                      </a>
-                </div>
-                </div>
-
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALMH6A-547_alt02.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - BACK PURPLE/PINK"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALMH6A-547_alt01.jpg" alt="MEN'S AVICTOR LAVA HIGH JAMMER - FRONT PURPLE/PINK"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                      <h3>MEN'S AVICTOR LAVA HIGH JAMMER SWIMSUIT</h3>
-                      <h4>PURPLE/PINK</h4>
-                      </a>
-                </div>
-                </div>
-                
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFOP6A-176_alt02.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - BACK BLACK/BLUE/RED"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFOP6A-176_alt01.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - FRONT BLACK/BLUE/RED"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
-                      <h3>WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT</h3>
-                      <h4>BLACK/BLUE/RED</h4>
-                      </a>
-                </div>
-                </div>
-                
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFOP6A-547_alt02.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - BACK PURPLE/PINK"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFOP6A-547_alt01.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT - FRONT PURPLE/PINK"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFOP6A/">
-                      <h3>WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT</h3>
-                      <h4>PURPLE/PINK</h4>
-                      </a>
-                </div>
-                </div>
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFC6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFC6A-176_alt02.jpg" alt="WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT - BACK BLACK/BLUE/RED"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFC6A-176_alt01.jpg" alt="WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT - FRONT BLACK/BLUE/RED"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALFC6A/">
-                      <h3>WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT</h3>
-                      <h4>BLACK/BLUE/RED</h4>
-                      </a>
-                </div>
-                </div>
-                <div class="item">
-                  <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                   <img class="bTop" src="/wp-content/uploads/2017/01/ALFC6A-547_alt02.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT- BACK PURPLE/PINK"/>
-                   <img class="fTop" src="/wp-content/uploads/2017/01/ALFC6A-547_alt01.jpg" alt="WOMEN'S AVICTOR LAVA OPEN BACK SWIMSUIT- FRONT PURPLE/PINK"/>
-                   </a>
-                   </div>
-				<div class="title-text">
-				<a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/ALMH6A/">
-                      <h3>WOMEN'S AVICTOR LAVA CLOSED BACK SWIMSUIT</h3>
-                      <h4>PURPLE/PINK</h4>
-                      </a>
-                </div>
-                </div>
-           
-
-              </div>
-            </div>
-          </div>
-        </div>---------->
-        
-		
-    <!-------<br><div class="container">
-          <div class="row">
-            <div class="span12">
-
-              <div id="img-carousel-2" class="owl-carousel">
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BEN7A-420_alt04.jpg" alt="TYR ENSO BIKINI BOTTOM - BACK BLUE">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BEN7A-420_alt1.jpg" alt="TYR ENSO BIKINI BOTTOM - FRONT BLUE">
-                    </a>
-                    </div>
-                    <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
-                      <h3>ENSO</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BEN7A-810_alt04.jpg" alt="TYR ENSO BIKINI BOTTOM - BACK ORANGE">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BEN7A-810_alt1.jpg" alt="TYR ENSO BIKINI BOTTOM - FRONT ORANGE">
-                    </a>
-                    </div>
-                     <div class="title-text">
-                     <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BEN7A/">
-                      <h3>ENSO</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                </div>
-                </div>
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BPAS7A-440_alt04.jpg" alt="TYR PASEO BIKINI BOTTOM - BACK TURQUOISE">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BPAS7A-440_alt01.jpg" alt="TYR PASEO BIKINI BOTTOM - FRONT TURQUOISE">
-                    </a>
-                    </div>
-                    <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
-                      <h3>PASEO</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-
-				<div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BPAS7A-670_alt04.jpg" alt="TYR PASEO BIKINI BOTTOM - BACK PINK">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BPAS7A-670_alt01.jpg" alt="TYR PASEO BIKINI BOTTOM - FRONT PINK">
-                    </a>
-                    </div>
-                   <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BPAS7A/">
-                      <h3>PASEO</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BROHA7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BROHA7A-510_alt04.jpg" alt="TYR OHANA BIKINI BOTTOM - BACK PURPLE">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BROHA7A-510_alt01.jpg" alt="TYR OHANA BIKINI BOTTOM - FRONT PURPLE">
-                    </a>
-                    </div>
-                    <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BROHA7A/">
-                      <h3>OHANA</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                </div>
-                </div>
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSO7A-001_alt04.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - BACK BLACK">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BSO7A-001_alt01.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - FRONT BLACK">
-                    </a>
-                    </div>
-                     <div class="title-text">
-                     <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
-                      <h3>SOLID</h3>
-                      <h4>ACTIVE BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-                
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSO7A-019_alt04.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - BACK GREY">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BSO7A-019_alt01.jpg" alt="TYR SOLID ACTIVE BIKINI BOTTOM - FRONT GREY">
-                    </a>
-                    </div>
-                     <div class="title-text">
-                     <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSO7A/">
-                      <h3>SOLID</h3>
-                      <h4>ACTIVE BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-
-                <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSOD7A-428_alt04.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM- BACK ROYAL">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BSOD7A-428_alt1.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - FRONT ROYAL">
-                    </a>
-                    </div>
-                    <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                      <h3>DURAFAST ONE SOLIDS</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-              
-              <div class="item">
-                <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSO7A-001_alt04-1.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM- BACK FL. PINK">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BSOD7A-693_alt2.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - FRONT FL. PINK">
-                    </a>
-                    </div>
-                    <div class="title-text">
-                    <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                      <h3>DURAFAST ONE SOLIDS</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                    </div>
-                </div>
-
-                <div class="item">
-                 <div class="item-cont">
-		          <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                  	<img class="bTop" src="/wp-content/uploads/2016/08/BSOD7A-820_alt04.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - BACK  FL. ORANGE">
-                    <img class="fTop" src="/wp-content/uploads/2016/08/BSOD7A-820_alt1.jpg" alt="TYR DURAFAST ONE SOLIDS BIKINI BOTTOM - FRONT FL. ORANGE">
-                    </a>
-                    </div>
-                      <div class="title-text">
-                      <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/BSOD7A/">
-                      <h3>DURAFAST ONE SOLIDS</h3>
-                      <h4>BIKINI BOTTOM</h4>
-                    </a>
-                </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-
-        </div>------------>
+    
+    <!------------------------>
      </div>
 <br><br>      
        </div>
@@ -619,56 +374,56 @@ padding:0;
                 image:"http://www.tyr.com/wp-content/uploads/2017/01/",
                 title: "TYR Edessa",
                 name: "Women's Shea 2 in 1 Tank", 
-                topimg: "TED7-418_alt1.jpg", 
-                bottomimg: "TED7-418_alt2.jpg",
+                topimg: "01/TED7-418_alt1.jpg", 
+                bottomimg: "01/TED7-418_alt2.jpg",
                 color: "Navy/Multi",
                 sku: "TED7A"   
                },
                {
                 title: "TYR Edessa",
                 name: "Women's Harlow Top", 
-                topimg:"BHED7-418_alt1.jpg", 
-                bottomimg:"BHED7-418_alt2.jpg",
+                topimg:"02/BHED7-418_alt1.jpg", 
+                bottomimg:"02/BHED7-418_alt2.jpg",
                 color: "Navy/Multi",
                 sku: "BHED7A"
                },
                {
                 title: "TYR Edessa",
                 name: "Women's Brooke Bralette", 
-                topimg:"BWED7-418_alt1.jpg", 
-                bottomimg:"BWED7-418_alt2.jpg",
+                topimg:"02/BWED7-418_alt1.jpg", 
+                bottomimg:"02/BWED7-418_alt2.jpg",
                 color: "Navy/Multi",
-                sku: "BWEDA"
+                sku: "BWED7A"
                },
                {
                 title: "TYR Edessa",
                 name: "Women's Lula Bikini Bottom", 
-                topimg:"BUED7-418_alt1.jpg", 
-                bottomimg:"BUED7-418_alt2.jpg",
+                topimg:"01/BUED7-418_alt1.jpg", 
+                bottomimg:"01/BUED7-418_alt2.jpg",
                 color: "Navy/Multi",
                 sku: "BUED7A"
                },
                {
                 title: "TYR Edessa",
                 name: "Women's Della BoyShort", 
-                topimg:"BED7-418_alt1.jpg", 
-                bottomimg:"BED7-418_alt2.jpg",
+                topimg:"01/BED7-418_alt1.jpg", 
+                bottomimg:"01/BED7-418_alt2.jpg",
                 color: "Navy/Multi",
                 sku: "BED7A"
                },
                {
                 title: "TYR Edessa",
                 name: "Women's Aria Long Sleeve Rashguard", 
-                topimg:"SLED7-418_alt1.jpg", 
-                bottomimg:"SLED7-418_alt2.jpg",
+                topimg:"01/SLED7-418_alt1.jpg", 
+                bottomimg:"01/SLED7-418_alt2.jpg",
                 color: "Navy/Multi",
                 sku: "SLED7A"
                },
                {
                 title: "TYR Edessa",
                 name: "Women's Makai Capri", 
-                topimg:"TMED7-418_alt1.jpg", 
-                bottomimg:"TMED7-418_alt2.jpg",
+                topimg:"01/TMED7-418_alt1.jpg", 
+                bottomimg:"01/TMED7-418_alt2.jpg",
                 color: "Navy/Multi",
                 sku: "TMED7A"
                }
@@ -680,56 +435,56 @@ padding:0;
                {
                 title: "TYR Verona",
                 name: "Women's Shea 2 in 1 Tank", 
-                topimg:"TVE7-088_alt1.jpg", 
-                bottomimg:"TVE7-088_alt2.jpg",
+                topimg:"01/TVE7-088_alt1.jpg", 
+                bottomimg:"01/TVE7-088_alt2.jpg",
                 color: "Black/Grey",
                 sku: "TVE7A"
                },
                {
                 title: "TYR Verona",
                 name: "Women's Brooke Tank", 
-                topimg:"TTVER7-088_alt1.jpg", 
-                bottomimg:"TTVER7-088_alt2.jpg",
+                topimg:"01/TTVER7-088_alt1.jpg", 
+                bottomimg:"01/TTVER7-088_alt2.jpg",
                 color: "Black/Grey",
                 sku: "TTVER7A"
                },
                {
                 title: "TYR Verona",
                 name: "Women's Brooke Bralette", 
-                topimg:"BWVE7-088_alt1.jpg", 
-                bottomimg:"BWVE7-088_alt2.jpg",
+                topimg:"02/BWVE7-088_alt1.jpg", 
+                bottomimg:"02/BWVE7-088_alt2.jpg",
                 color: "Black/Grey",
                 sku: "BWVE7A"
                },
                {
                 title: "TYR Verona",
                 name: "Women's Della Boyshort", 
-                topimg:"BVE7-088_alt1.jpg", 
-                bottomimg:"BVE7-088_alt2.jpg",
+                topimg:"01/BVE7-088_alt1.jpg", 
+                bottomimg:"01/BVE7-088_alt2.jpg",
                 color: "Black/Grey",
                 sku: "BVE7A"
                },
                {
                 title: "TYR Verona",
                 name: "Women's Zola Hipkini", 
-                topimg:"BBVE7-088_alt1.jpg", 
-                bottomimg:"BBVE7-088_alt2.jpg",
+                topimg:"01/BBVE7-088_alt1.jpg", 
+                bottomimg:"01/BBVE7-088_alt2.jpg",
                 color: "Black/Grey",
                 sku: "BBVE7A"
                },
                {
                 title: "TYR Verona",
                 name: "Women's Maya Long Sleeve Crop Rashguard", 
-                topimg:"SLCMVE7-088_alt1.jpg", 
-                bottomimg:"SLCMVE7-088_alt2.jpg",
+                topimg:"01/SLCMVE7-088_alt1.jpg", 
+                bottomimg:"01/SLCMVE7-088_alt2.jpg",
                 color: "Black/Grey",
                 sku: "SLCMVE7A"
                },
                {
                 title: "TYR Verona",
                 name: "Women's Malu Capri", 
-                topimg:"TMVE7-088_alt1.jpg", 
-                bottomimg:"TMVE7-088_alt2.jpg",
+                topimg:"01/TMVE7-088_alt1.jpg", 
+                bottomimg:"01/TMVE7-088_alt2.jpg",
                 color: "Black/Grey",
                 sku: "TMVE7A"
                }
@@ -741,56 +496,56 @@ padding:0;
                {
                 title: "TYR Cadet",
                 name: "Women's Solay 2 in 1 Tank", 
-                topimg:"TCAD7-472_alt1.jpg", 
-                bottomimg:"TCAD7-472_alt2.jpg",
+                topimg:"01/TCAD7-472_alt1.jpg", 
+                bottomimg:"01/TCAD7-472_alt2.jpg",
                 color: "Royal/Navy",
                 sku: "TCAD7A"
                },
                {
                 title: "TYR Cadet",
                 name: "Women's Lani Top", 
-                topimg:"BLCAD7-472_alt1.jpg", 
-                bottomimg:"BLCAD7-472_alt2.jpg",
+                topimg:"01/BLCAD7-472_alt1.jpg", 
+                bottomimg:"01/BLCAD7-472_alt2.jpg",
                 color: "Royal/Navy",
                 sku: "BLCAD7A"
                },
                {
                 title: "TYR Cadet",
                 name: "Women's Lyn Racerback", 
-                topimg:"BRCAD7-472_alt1.jpg", 
-                bottomimg:"BRCAD7-472_alt2.jpg",
+                topimg:"01/BRCAD7-472_alt1.jpg", 
+                bottomimg:"01/BRCAD7-472_alt2.jpg",
                 color: "Royal/Navy",
                 sku: "BRCAD7A"
                },
                {
                 title: "TYR Cadet",
                 name: "Women's Kaya Bikini Bottom", 
-                topimg:"BKCAD7-472_alt1.jpg", 
-                bottomimg:"BKCAD7-472_alt2.jpg",
+                topimg:"01/BKCAD7-472_alt1.jpg", 
+                bottomimg:"01/BKCAD7-472_alt2.jpg",
                 color: "Royal/Navy",
                 sku: "BKCAD7A"
                },
                {
                 title: "TYR Cadet",
                 name: "Women's Della Boyshort", 
-                topimg:"BCAD7-472_alt1.jpg", 
-                bottomimg:"BCAD7-472_alt2.jpg",
+                topimg:"01/BCAD7-472_alt1.jpg", 
+                bottomimg:"01/BCAD7-472_alt2.jpg",
                 color: "Royal/Navy",
                 sku: "BCAD7A"
                },
                {
                 title: "TYR Cadet",
                 name: "Women's Aria Long Sleeve Rashguard", 
-                topimg:"SLCAD7-472_alt1.jpg", 
-                bottomimg:"SLCAD7-472_alt2.jpg",
+                topimg:"01/SLCAD7-472_alt1.jpg", 
+                bottomimg:"01/SLCAD7-472_alt2.jpg",
                 color: "Royal/Navy",
                 sku: "SLCAD7A"
                },
                {
                 title: "TYR Cadet",
                 name: "Women's Makai Capri", 
-                topimg:"TMCAD7-472_alt1.jpg", 
-                bottomimg:"TMCAD7-472_alt2.jpg",
+                topimg:"01/TMCAD7-472_alt1.jpg", 
+                bottomimg:"01/TMCAD7-472_alt2.jpg",
                 color: "Royal/Navy",
                 sku: "TMCAD7A"
                }
@@ -802,72 +557,72 @@ padding:0;
                {
                 title: "TYR Cyprus",
                 name: "Women's Brooke Tank", 
-                topimg:"TTCY7-184_alt1.jpg", 
-                bottomimg:"TTCY7-184_alt2.jpg",
+                topimg:"01/TTCY7-184_alt1.jpg", 
+                bottomimg:"01/TTCY7-184_alt2.jpg",
                 color: "Pink/Purple",
                 sku: "TTCY7A"
                },
                {
                 title: "TYR Cyprus",
                 name: "Women's Shea 2 in 1 Tank", 
-                topimg:"TCY7-184_alt1.jpg", 
-                bottomimg:"TCY7-184_alt2.jpg",
+                topimg:"01/TCY7-184_alt1.jpg", 
+                bottomimg:"01/TCY7-184_alt2.jpg",
                 color: "Pink/Purple",
                 sku: "TCY7A"
                },
                {
                 title: "TYR Cyprus",
                 name: "Women's Ambu Tank", 
-                topimg:"TACY7A-184_alt1.jpg", 
-                bottomimg:"TACY7A-184_alt2.jpg",
+                topimg:"01/TACY7A-184_alt1.jpg", 
+                bottomimg:"01/TACY7A-184_alt2.jpg",
                 color: "Pink/Purple",
                 sku: "TACY7A"
                },
                {
                 title: "TYR Cyprus",
                 name: "Women's Lani Top", 
-                topimg:"BLCY7-184_alt1.jpg", 
-                bottomimg:"BLCY7-184_alt2.jpg",
+                topimg:"01/BLCY7-184_alt1.jpg", 
+                bottomimg:"01/BLCY7-184_alt2.jpg",
                 color: "Pink/Purple",
                 sku: "BLCY7A"
                },
                {
                 title: "TYR Cyprus",
                 name: "Women's Lyn Racerback", 
-                topimg:"BRCY7-184_alt1.jpg", 
-                bottomimg:"BRCY7-184_alt2.jpg",
+                topimg:"01/BRCY7-184_alt1.jpg", 
+                bottomimg:"01/BRCY7-184_alt2.jpg",
                 color: "Pink/Purple",
                 sku: "BRCY7A"
                },
                {
                 title: "TYR Cyprus",
                 name: "Women's Della Boyshort", 
-                topimg:"BSCY7-184_alt1.jpg", 
-                bottomimg:"BSCY7-184_alt2.jpg",
+                topimg:"01/BSCY7-184_alt1.jpg", 
+                bottomimg:"01/BSCY7-184_alt2.jpg",
                 color: "Pink/Purple",
                 sku: "BSCY7A"
                },
                 {
                 title: "TYR Cyprus",
                 name: "Women's Kaya Bikini Bottom", 
-                topimg:"BCCY7-184_alt1.jpg", 
-                bottomimg:"BCCY7-184_alt2.jpg",
+                topimg:"01/BCCY7-184_alt1.jpg", 
+                bottomimg:"01/BCCY7-184_alt2.jpg",
                 color: "Pink/Purple",
                 sku: "BCCY7A"
                },
                 {
                 title: "TYR Cyprus",
                 name: "Women's Aria Long Sleeve Rashguard", 
-                topimg:"SLCY7-184_alt1.jpg", 
-                bottomimg:"SLCY7-184_alt2.jpg",
+                topimg:"01/SLCY7-184_alt1.jpg", 
+                bottomimg:"01/SLCY7-184_alt2.jpg",
                 color: "Pink/Purple",
                 sku: "SLCY7A"
                },
                {
                 title: "TYR Cyprus",
                 name: "Women's Makai Capri", 
-                topimg:"TMCY7-184_alt1.jpg", 
-                bottomimg:"TMCY7-184_alt2.jpg",
+                topimg:"01/TMCY7-184_alt1.jpg", 
+                bottomimg:"01/TMCY7-184_alt2.jpg",
                 color: "Pink/Purple",
                 sku: "TMCY7A"
                }
@@ -879,48 +634,48 @@ padding:0;
                {
                 title: "TYR Sonoma",
                 name: "Women's Isla Top", 
-                topimg:"BVSN7-001_alt1.jpg", 
-                bottomimg:"BVSN7-001_alt2.jpg",
+                topimg:"02/BVSN7-001_alt1.jpg", 
+                bottomimg:"02/BVSN7-001_alt2.jpg",
                 color: "Black",
                 sku: "BVSN7A"
                },
                {
                 title: "TYR Sonoma",
                 name: "Women's Della Skort", 
-                topimg:"BSSN7-001_alt1.jpg", 
-                bottomimg:"BSSN7-001_alt2.jpg",
+                topimg:"01/BSSN7-001_alt1.jpg", 
+                bottomimg:"01/BSSN7-001_alt2.jpg",
                 color: "Black",
                 sku: "BSSN7A"
                },
                {
                 title: "TYR Sonoma",
                 name: "Women's Riva Bikini Bottom", 
-                topimg:"BBSN7-001_alt1.jpg", 
-                bottomimg:"BBSN7-001_alt2.jpg",
+                topimg:"01/BBSN7-001_alt1.jpg", 
+                bottomimg:"01/BBSN7-001_alt2.jpg",
                 color: "Black",
                 sku: "BBSN7A"
                },
                {
                 title: "TYR Sonoma",
                 name: "Women's Brooke Bralette", 
-                topimg:"BWSN7-001_alt1.jpg", 
-                bottomimg:"BWSN7-001_alt2.jpg",
+                topimg:"02/BWSN7-001_alt1.jpg", 
+                bottomimg:"02/BWSN7-001_alt2.jpg",
                 color: "Black",
                 sku: "BWSN7A"
                },
                {
                 title: "TYR Sonoma",
                 name: "Women's Kalani Capri", 
-                topimg:"TKSN7-001_alt1.jpg", 
-                bottomimg:"TKSN7-001_alt2.jpg",
+                topimg:"01/TKSN7-001_alt1.jpg", 
+                bottomimg:"01/TKSN7-001_alt2.jpg",
                 color: "Black",
                 sku: "TKSN7A"
                },
                 {
                 title: "TYR Sonoma",
                 name: "Women's Belize Long Sleeve Rashguard", 
-                topimg:"SWLSN7-001_alt1.jpg", 
-                bottomimg:"SWLSN7-001_alt2.jpg",
+                topimg:"01/SWLSN7-001_alt1.jpg", 
+                bottomimg:"01/SWLSN7-001_alt2.jpg",
                 color: "Black",
                 sku: "SWLSN7A"
                }
@@ -932,64 +687,64 @@ padding:0;
                {
                 title: "TYR Solid",
                 name: "Women's Brooke Tank", 
-                topimg:"TTSO7-001_alt1.jpg", 
-                bottomimg:"TTSO7-001_alt2.jpg",
+                topimg:"01/TTSO7-001_alt1.jpg", 
+                bottomimg:"01/TTSO7-001_alt2.jpg",
                 color: "Black",
                 sku: "TTSO7A"
                },
                {
                 title: "TYR Solid",
                 name: "Women's Brooke Bralette", 
-                topimg:"BWSO7-001_alt1.jpg", 
-                bottomimg:"BWSO7-001_alt2.jpg",
+                topimg:"02/BWSO7-001_alt1.jpg", 
+                bottomimg:"02/BWSO7-001_alt2.jpg",
                 color: "Black",
                 sku: "BWSO7A"
                },
                {
                 title: "TYR Solid",
                 name: "Women's Zola Hipkini", 
-                topimg:"BBSO7-001_alt1.jpg", 
-                bottomimg:"BBSO7-001_alt2.jpg",
+                topimg:"01/BBSO7-001_alt1.jpg", 
+                bottomimg:"01/BBSO7-001_alt2.jpg",
                 color: "Black",
                 sku: "BBSO7A"
                },
                {
                 title: "TYR Solid",
                 name: "Women's Kalani Capri", 
-                topimg:"TKS07-001_alt1-1.jpg", 
-                bottomimg:"TKS07-001_alt2-1.jpg",
+                topimg:"01/TKS07-001_alt1-1.jpg", 
+                bottomimg:"01/TKS07-001_alt2-1.jpg",
                 color: "Black",
                 sku: "TKSO7A"
                },
                {
                 title: "TYR Solid",
                 name: "Women's Kalani Short", 
-                topimg:"BDSSO7-001_alt1.jpg", 
-                bottomimg:"BDSSO7-001_alt2.jpg",
+                topimg:"01/BDSSO7-001_alt1.jpg", 
+                bottomimg:"01/BDSSO7-001_alt2.jpg",
                 color: "Black",
                 sku: "BDSSO7A"
                },
                {
                 title: "TYR Solid",
                 name: "Women's Zoe Hooded Dress", 
-                topimg:"CHSO7-001_alt1.jpg", 
-                bottomimg:"CHSO7-001_alt2.jpg",
+                topimg:"01/CHSO7-001_alt1.jpg", 
+                bottomimg:"01/CHSO7-001_alt2.jpg",
                 color: "Black",
                 sku: "CHSO7A"
                },
                 {
                 title: "TYR Solid",
                 name: "Women's Lolani Dress", 
-                topimg:"CDSO7-001_alt1.jpg", 
-                bottomimg:"CDSO7-001_alt2.jpg",
+                topimg:"01/CDSO7-001_alt1.jpg", 
+                bottomimg:"01/CDSO7-001_alt2.jpg",
                 color: "Black",
                 sku: "CDSO7A"
                },
                 {
                 title: "TYR Solid",
                 name: "Women's Layla Boardshort", 
-                topimg:"CLSO7-001_alt1.jpg", 
-                bottomimg:"CLSO7-001_alt2.jpg",
+                topimg:"01/CLSO7-001_alt1.jpg", 
+                bottomimg:"01/CLSO7-001_alt2.jpg",
                 color: "Black",
                 sku: "CLSO7A"
                }
@@ -1001,40 +756,40 @@ padding:0;
                {
                 title: "TYR Machu",
                 name: "Women's Cutoutfit", 
-                topimg:"TCMH7-185_alt1.jpg", 
-                bottomimg:"TCMH7-185_alt2.jpg",
+                topimg:"01/TCMH7-185_alt1.jpg", 
+                bottomimg:"01/TCMH7-185_alt2.jpg",
                 color: "Blue/Multi",
                 sku: "TCMH7A"
                },
                {
                 title: "TYR Machu",
                 name: "Women's Crosscutfit Tieback", 
-                topimg:"TMH7-461_alt1.jpg", 
-                bottomimg:"TMH7-461_alt2.jpg",
+                topimg:"01/TMH7-461_alt1.jpg", 
+                bottomimg:"01/TMH7-461_alt2.jpg",
                 color: "Blue/Multi",
                 sku: "TMH7A"
                },
                {
                 title: "TYR Machu",
                 name: "Women's Valley Top", 
-                topimg:"BTBMH7-461_alt1.jpg", 
-                bottomimg:"BTBMH7-461_alt2.jpg",
+                topimg:"01/BTBMH7-461_alt1.jpg", 
+                bottomimg:"02/BTBMH7-461_alt2.jpg",
                 color: "Blue/Multi",
                 sku: "BTBMH7A"
                },
                {
                 title: "TYR Machu",
                 name: "Women's Pacific Tieback Top", 
-                topimg:"BVTMH7-461_alt1.jpg", 
-                bottomimg:"BVTMH7-461_alt2.jpg",
+                topimg:"02/BVTMH7-461_alt1.jpg", 
+                bottomimg:"02/BVTMH7-461_alt2.jpg",
                 color: "Blue/Multi",
                 sku: "BVTMH7A"
                },
                {
                 title: "TYR Machu",
                 name: "Women's Bikini Bottom", 
-                topimg:"BMH7-461_alt1.jpg", 
-                bottomimg:"BMH7-461_alt2.jpg",
+                topimg:"01/BMH7-461_alt1.jpg", 
+                bottomimg:"01/BMH7-461_alt2.jpg",
                 color: "Blue/Multi",
                 sku: "BMH7A"
                }
@@ -1046,41 +801,41 @@ padding:0;
                {
                 title: "TYR Panama",
                 name: "Women's Cutoutfit", 
-                topimg:"TPA7-696_alt1.jpg", 
-                bottomimg:"TPA7-696_alt2.jpg",
-                color: "Pink/Multi",
+                topimg:"01/TPA7-004_alt1.jpg", 
+                bottomimg:"01/TPA7-004_alt2.jpg",
+                color: "Black/Multi",
                 sku: "TPA7A"
                },
                {
                 title: "TYR Panama",
                 name: "Women's Valleyfit", 
-                topimg:"TTPA7-696_alt1.jpg", 
-                bottomimg:"TTPA7-696_alt2.jpg",
-                color: "Pink/Multi",
+                topimg:"01/TTPA7-004_alt1.jpg", 
+                bottomimg:"01/TTPA7-004_alt2.jpg",
+                color: "Black/Multi",
                 sku: "TTPA7A"
                },
                {
                 title: "TYR Panama",
                 name: "Women's Pacific Tieback Top", 
-                topimg:"BVTPA7-696_alt1.jpg", 
-                bottomimg:"BVTPA7-696_alt2.jpg",
-                color: "Pink/Multi",
+                topimg:"01/BVTPA7-004_alt1.jpg", 
+                bottomimg:"02/BVTPA7-004_alt2.jpg",
+                color: "Black/Multi",
                 sku: "BVTPA7A"
                },
                {
                 title: "TYR Panama",
                 name: "Women's Twist Top", 
-                topimg:"BDPA7-696_alt1.jpg", 
-                bottomimg:"BDPA7-696_alt2.jpg",
-                color: "Pink/Multi",
+                topimg:"02/BDPA7-004_alt1.jpg", 
+                bottomimg:"02/BDPA7-004_alt2.jpg",
+                color: "Black/Multi",
                 sku: "BDPA7A"
                },
                {
                 title: "TYR Panama",
                 name: "Women's Bikini Bottom", 
-                topimg:"BPA7-696_alt1.jpg", 
-                bottomimg:"BPA7-696_alt2.jpg",
-                color: "Pink/Multi",
+                topimg:"01/BPA7-004_alt1.jpg", 
+                bottomimg:"01/BPA7-004_alt2.jpg",
+                color: "Black/Multi",
                 sku: "BPA7A"
                }
            ]
@@ -1091,40 +846,40 @@ padding:0;
                {
                 title: "TYR Ravana",
                 name: "Women's Cutoutfit", 
-                topimg:"TRA7-004_alt1.jpg", 
-                bottomimg:"TRA7-004_alt2.jpg",
+                topimg:"01/TRA7-004_alt1.jpg", 
+                bottomimg:"01/TRA7-004_alt2.jpg",
                 color: "Black/Multi",
                 sku: "TRA7A"
                },
                {
                 title: "TYR Ravana",
                 name: "Women's Trinityfit", 
-                topimg:"TCRA7-004_alt1.jpg", 
-                bottomimg:"TCRA7-004_alt2.jpg",
+                topimg:"01/TCRA7-004_alt1.jpg", 
+                bottomimg:"01/TCRA7-004_alt2.jpg",
                 color: "Black/Multi",
                 sku: "TCRA7A"
                },
                {
                 title: "TYR Ravana",
                 name: "Women's Crosscut Tieback Top", 
-                topimg:"BTRA7-004_alt1.jpg", 
-                bottomimg:"BTRA7-004_alt2.jpg",
+                topimg:"01/BTRA7-004_alt1.jpg", 
+                bottomimg:"02/BTRA7-004_alt2.jpg",
                 color: "Black/Multi",
                 sku: "BTRA7A"
                },
                {
                 title: "TYR Ravana",
                 name: "Women's Lula Bikini Bottom", 
-                topimg:"BSO7-019_alt1.jpg", 
-                bottomimg:"BSO7-019_alt2.jpg",
+                topimg:"01/BSO7-019_alt1.jpg", 
+                bottomimg:"01/BSO7-019_alt2.jpg",
                 color: "Grey",
                 sku: "BSO7A"
                },
                {
                 title: "TYR Ravana",
                 name: "Women's Lula Bikini Bottom", 
-                topimg:"BSO7-401_alt1.jpg", 
-                bottomimg:"BSO7-401_alt2.jpg",
+                topimg:"01/BSO7-401_alt1.jpg", 
+                bottomimg:"01/BSO7-401_alt2.jpg",
                 color: "Navy",
                 sku: "BSO7A"
                }
@@ -1136,56 +891,40 @@ padding:0;
                {
                 title: "TYR Electro",
                 name: "Women's Cutoutfit", 
-                topimg:"TELE7-004_alt1.jpg", 
-                bottomimg:"TELE7-004_alt2.jpg",
+                topimg:"01/TELE7-004_alt1.jpg", 
+                bottomimg:"01/TELE7-004_alt2.jpg",
                 color: "Black/Multi",
                 sku: "TELE7A"
                },
                {
                 title: "TYR Electro",
                 name: "Women's Crosscut Tieback Top", 
-                topimg:"BTELE7-004_alt1.jpg", 
-                bottomimg:"BTELE7-004_alt2.jpg",
+                topimg:"01/BTELE7-004_alt1.jpg", 
+                bottomimg:"02/BTELE7-004_alt2.jpg",
                 color: "Black/Multi",
-                sku: "BTELE7A"
-               },
-                   {
-                title: "TYR Electro",
-                name: "Women's Cutoutfit", 
-                topimg:"TELE7-418_alt1.jpg", 
-                bottomimg:"TELE7-418_alt2.jpg",
-                color: "Navy/Multi",
-                sku: "TELE7A"
-               },
-               {
-                title: "TYR Electro",
-                name: "Women's Crosscut Tieback Top", 
-                topimg:"BTELE7-418_alt1.jpg", 
-                bottomimg:"BTELE7-418_alt2.jpg",
-                color: "Navy/Multi",
                 sku: "BTELE7A"
                },
                {
                 title: "TYR Electro",
                 name: "Women's Bikini Bottom", 
-                topimg:"BSOD7-001_alt1.jpg", 
-                bottomimg:"BSOD7-001_alt2.jpg",
+                topimg:"01/BSOD7-001_alt1.jpg", 
+                bottomimg:"01/BSOD7-001_alt2.jpg",
                 color: "Black",
                 sku: "BSOD7A"
                },
                {
                 title: "TYR Electro",
                 name: "Women's Bikini Bottom", 
-                topimg:"BSOD7-428_alt1.jpg", 
-                bottomimg:"BSOD7-428_alt2.jpg",
+                topimg:"01/BSOD7-428_alt1.jpg", 
+                bottomimg:"01/BSOD7-428_alt2.jpg",
                 color: "Royal",
                 sku: "BSOD7A"
                },
                {
                 title: "TYR Electro",
                 name: "Women's Bikini Bottom", 
-                topimg:"BSOD7-693_alt1.jpg", 
-                bottomimg:"BSOD7-693_alt2.jpg",
+                topimg:"01/BSOD7-693_alt1.jpg", 
+                bottomimg:"01/BSOD7-693_alt2.jpg",
                 color: "Fl. Pink",
                 sku: "BSOD7A"
                }
@@ -1197,48 +936,48 @@ padding:0;
                {
                 title: "TYR Sumatra",
                 name: "Women's Cutoutfit", 
-                topimg:"TCSUM7-004_alt1.jpg", 
-                bottomimg:"TCSUM7-004_alt2.jpg",
+                topimg:"01/TCSUM7-004_alt1.jpg", 
+                bottomimg:"01/TCSUM7-004_alt2.jpg",
                 color: "Black/Multi",
                 sku: "TCSUM7A"
                },
                {
                 title: "TYR Sumatra",
                 name: "Women's Crosscut Tieback", 
-                topimg:"TSUM7-004_alt1.jpg", 
-                bottomimg:"TSUM7-004_alt2.jpg",
+                topimg:"01/TSUM7-004_alt1.jpg", 
+                bottomimg:"01/TSUM7-004_alt2.jpg",
                 color: "Black/Multi",
                 sku: "TSUM7A"
                },
                {
                 title: "TYR Sumatra",
                 name: "Women's Trinity Top", 
-                topimg:"BCSUM7-004_alt1.jpg", 
-                bottomimg:"BCSUM7-004_alt2.jpg",
+                topimg:"01/BCSUM7-004_alt1.jpg", 
+                bottomimg:"01/BCSUM7-004_alt2.jpg",
                 color: "Black/Multi",
                 sku: "BCSUM7A"
                },
                {
                 title: "TYR Sumatra",
                 name: "Women's Bikini Bottom", 
-                topimg:"BSUM7-004_alt1.jpg", 
-                bottomimg:"BSUM7-004_alt2.jpg",
+                topimg:"01/BSUM7-004_alt1.jpg", 
+                bottomimg:"01/BSUM7-004_alt2.jpg",
                 color: "Black/Multi",
                 sku: "BSUM7A"
                },
                {
                 title: "TYR Sumatra",
                 name: "Women's Bikini Bottom", 
-                topimg:"BSOD7-693_alt1.jpg", 
-                bottomimg:"BSOD7-693_alt2.jpg",
+                topimg:"01/BSOD7-693_alt1.jpg", 
+                bottomimg:"01/BSOD7-693_alt2.jpg",
                 color: "Fl. Pink",
                 sku: "BSOD7A"
                },
                {
                 title: "TYR Sumatra",
                 name: "Women's Bikini Bottom", 
-                topimg:"BSOD7-820_alt1.jpg", 
-                bottomimg:"BSOD7-820_alt2.jpg",
+                topimg:"01/BSOD7-820_alt1.jpg", 
+                bottomimg:"01/BSOD7-820_alt2.jpg",
                 color: "Fl. Orange",
                 sku: "BSOD7A"
                }
@@ -1250,48 +989,48 @@ padding:0;
                {
                 title: "TYR Motus",
                 name: "Women's Cutoutfit", 
-                topimg:"TMOT7-696_alt1.jpg", 
-                bottomimg:"TMOT7-696_alt2.jpg",
+                topimg:"01/TMOT7-696_alt1.jpg", 
+                bottomimg:"01/TMOT7-696_alt2.jpg",
                 color: "Pink/Multi",
                 sku: "TMOT7A"
                },
                {
                 title: "TYR Motus",
                 name: "Women's Bali Top", 
-                topimg:"BTMOT7-696_alt1.jpg", 
-                bottomimg:"BTMOT7-696_alt2.jpg",
+                topimg:"01/BTMOT7-696_alt1.jpg", 
+                bottomimg:"02/BTMOT7-696_alt2.jpg",
                 color: "Pink/Multi",
                 sku: "BTMOT7A"
                },
                {
                 title: "TYR Motus",
                 name: "Women's Trinity Top", 
-                topimg:"BCMOT7-696_alt1.jpg", 
-                bottomimg:"BCMOT7-696_alt2.jpg",
+                topimg:"01/BCMOT7-696_alt1.jpg", 
+                bottomimg:"01/BCMOT7-696_alt2.jpg",
                 color: "Pink/Multi",
                 sku: "BCMOT7A"
                },
                {
                 title: "TYR Motus",
                 name: "Women's Bikini Bottom", 
-                topimg:"BSUM7-004_alt1.jpg", 
-                bottomimg:"BSUM7-004_alt2.jpg",
+                topimg:"01/BSUM7-004_alt1.jpg", 
+                bottomimg:"01/BSUM7-004_alt2.jpg",
                 color: "Black/Multi",
                 sku: "BSUM7A"
                },
                {
                 title: "TYR Motus",
                 name: "Women's Bikini Bottom", 
-                topimg:"BSOD7-693_alt1.jpg", 
-                bottomimg:"BSOD7-693_alt2.jpg",
+                topimg:"01/BSOD7-693_alt1.jpg", 
+                bottomimg:"01/BSOD7-693_alt2.jpg",
                 color: "Fl. Pink",
                 sku: "BSOD7A"
                },
                {
                 title: "TYR Motus",
                 name: "Women's Bikini Bottom", 
-                topimg:"BSOD7-428_alt1.jpg", 
-                bottomimg:"BSOD7-428_alt2.jpg",
+                topimg:"01/BSOD7-428_alt1.jpg", 
+                bottomimg:"01/BSOD7-428_alt2.jpg",
                 color: "Royal",
                 sku: "BSOD7A"
                }
