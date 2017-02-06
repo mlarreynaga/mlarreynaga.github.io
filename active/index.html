@@ -326,7 +326,6 @@ padding:0;
                 <!----<iframe id="ytplayer" type="text/html" width="100%" height="1080"
   src="https://www.youtube.com/embed/rsraotEqFUg?controls=0&autoplay=1&origin=http://tyr.com"
   frameborder="0"></iframe>------->
-
        
 </div>
 <div id="demo" class="fade-in-2">
@@ -338,9 +337,9 @@ padding:0;
 <div id="img-carousel" class="owl-carousel owl-theme" >
                 <div class="item" ng-repeat="style in collection.styles">
                   <div class="item-cont" >
-		              <a class="fancybox fancybox.iframe" href="/shop/quickview/product/iframe/sku/{{ style.sku }}/">
-                          <img class="bTop" ng-src="/wp-content/uploads/2017/{{ style.bottomimg }}" alt="{{ style.title + ' ' + style.name + ' - Back ' + style.color }}"/>
-                          <img class="fTop" ng-src="/wp-content/uploads/2017/{{ style.topimg }}" alt="{{ style.title + ' ' + style.name + ' - Front ' + style.color }}"/>
+		              <a class="fancybox fancybox.iframe" href="http://www.tyr.com/shop/quickview/product/iframe/sku/{{ style.sku }}/">
+                          <img class="bTop" ng-src="http://www.tyr.com/wp-content/uploads/2017/{{ style.bottomimg }}" alt="{{ style.title + ' ' + style.name + ' - Back ' + style.color }}"/>
+                          <img class="fTop" ng-src="http://www.tyr.com/wp-content/uploads/2017/{{ style.topimg }}" alt="{{ style.title + ' ' + style.name + ' - Front ' + style.color }}"/>
                            </a>
                    </div>
                   <div class="title-text">
@@ -1123,6 +1122,6 @@ padding:0;
     }
 	
     </script>
-
+       </div>
   </body>
 </html>
