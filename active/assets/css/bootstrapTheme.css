@@ -1971,7 +1971,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("http://www.tyr.com/wp-content/uploads/2016/09/glyphicons-halflings-green.png");
+  background-image: url("/wp-content/uploads/2016/09/glyphicons-halflings-green.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 4px;
@@ -1994,7 +1994,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("http://www.tyr.com/wp-content/uploads/2016/09/glyphicons-halflings-white.png");
+  background-image: url("/wp-content/uploads/2016/09/glyphicons-halflings-white.png");
 }
 .icon-glass {
   background-position: 0      0;
